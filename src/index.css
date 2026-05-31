@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-orange: oklch(0.7 0.2 45);
+}
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-slate-800 antialiased font-sans;
+  }
+}
