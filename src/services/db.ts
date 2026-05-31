@@ -1,6 +1,13 @@
 import { createClient } from '@supabase/supabase-js';
 import type { Task, Report, ClientId } from '../types';
 
+const generateUUID = (): string => {
+  if (typeof window !== 'undefined' && window.crypto && window.crypto.randomUUID) {
+    return window.crypto.randomUUID();
+  }
+  return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+};
+
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
 
@@ -56,7 +63,7 @@ export const getTasks = async (clientId?: ClientId): Promise<Task[]> => {
 export const addTask = async (task: Omit<Task, 'id' | 'comments'>): Promise<Task> => {
   const newTask: Task = {
     ...task,
-    id: crypto.randomUUID(),
+    id: generateUUID(),
     comments: []
   };
 
@@ -155,7 +162,7 @@ export const getReports = async (): Promise<Report[]> => {
 export const addReport = async (report: Omit<Report, 'id' | 'uploadDate'>): Promise<Report> => {
   const newReport: Report = {
     ...report,
-    id: crypto.randomUUID(),
+    id: generateUUID(),
     uploadDate: new Date().toISOString()
   };
 
