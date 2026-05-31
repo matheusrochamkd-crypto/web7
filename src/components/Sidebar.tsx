@@ -1,4 +1,3 @@
-import React from 'react';
 import { clsx } from 'clsx';
 import { Briefcase, Building2, Stethoscope, Medal, FileText } from 'lucide-react';
 import type { ActiveView, ClientId } from '../types';
@@ -19,7 +18,7 @@ const getIconForClient = (id: string) => {
   }
 };
 
-export const Sidebar: React.FC<SidebarProps> = ({ selectedView, onSelectView }) => {
+export const Sidebar = ({ selectedView, onSelectView }: SidebarProps) => {
   return (
     <aside className="w-64 bg-slate-900 text-slate-300 h-screen flex flex-col fixed left-0 top-0 border-r border-slate-800 shadow-xl z-20">
       <div className="p-6 border-b border-slate-800 flex items-center gap-3">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { FileText, Download, Upload, Plus, Trash2 } from 'lucide-react';
 import type { Report } from '../types';
 import { NewReportModal } from './NewReportModal';
@@ -9,7 +9,7 @@ interface ReportsProps {
   onDeleteReport: (id: string) => void;
 }
 
-export const Reports: React.FC<ReportsProps> = ({ reports, onAddReport, onDeleteReport }) => {
+export const Reports = ({ reports, onAddReport, onDeleteReport }: ReportsProps) => {
   const [isNewReportModalOpen, setIsNewReportModalOpen] = useState(false);
 
   return (

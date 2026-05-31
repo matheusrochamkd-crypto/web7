@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { X, Plus, FileText, Link as LinkIcon } from 'lucide-react';
 import type { Task, ClientId, TaskStatus } from '../types';
 

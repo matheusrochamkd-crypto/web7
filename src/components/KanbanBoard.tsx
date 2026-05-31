@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import type { Task, TaskStatus, ClientId } from '../types';
 import { TaskModal } from './TaskModal';
 import { NewTaskModal } from './NewTaskModal';
@@ -21,7 +21,7 @@ const COLUMNS: { id: TaskStatus; title: string; colorClass: string }[] = [
   { id: 'personalizado', title: 'Personalizado', colorClass: 'border-purple-200 bg-purple-50/50' },
 ];
 
-export const KanbanBoard: React.FC<KanbanBoardProps> = ({ clientId, tasks, onUpdateTask, onAddTask, onDeleteTask }) => {
+export const KanbanBoard = ({ clientId, tasks, onUpdateTask, onAddTask, onDeleteTask }: KanbanBoardProps) => {
   const [selectedTask, setSelectedTask] = useState<Task | null>(null);
   const [isNewTaskModalOpen, setIsNewTaskModalOpen] = useState(false);
 

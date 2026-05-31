@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { X, Send, Link as LinkIcon, FileText, MessageSquare, Trash2 } from 'lucide-react';
 import type { Task } from '../types';
 
@@ -9,7 +9,7 @@ interface TaskModalProps {
   onDeleteTask: (id: string) => void;
 }
 
-export const TaskModal: React.FC<TaskModalProps> = ({ task, onClose, onUpdateTask, onDeleteTask }) => {
+export const TaskModal = ({ task, onClose, onUpdateTask, onDeleteTask }: TaskModalProps) => {
   const [copy, setCopy] = useState(task.copy);
   const [driveLinks, setDriveLinks] = useState(task.driveLinks);
   const [newComment, setNewComment] = useState('');

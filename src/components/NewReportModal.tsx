@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { X, Plus, FileText, Globe } from 'lucide-react';
+import { useState } from 'react';
+import { X, Plus, Globe } from 'lucide-react';
 import type { Report, ClientId } from '../types';
 import { clientsList } from '../mockData';
 
