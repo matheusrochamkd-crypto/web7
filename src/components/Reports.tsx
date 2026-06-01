@@ -57,9 +57,26 @@ export const Reports = ({ reports, onAddReport, onDeleteReport }: ReportsProps) 
                       <div className="p-2 bg-blue-50 text-blue-600 rounded-lg">
                         <FileText size={20} />
                       </div>
-                      <span className="font-medium text-slate-700 group-hover:text-blue-600 transition-colors">
-                        {report.name}
-                      </span>
+                      <div>
+                        <a 
+                          href={report.fileUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="font-medium text-slate-700 hover:text-blue-600 hover:underline transition-colors block"
+                        >
+                          {report.name}
+                        </a>
+                        {report.fileUrl && report.fileUrl !== '#' && (
+                          <a 
+                            href={report.fileUrl} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-xs text-blue-500 hover:underline block mt-0.5 max-w-xs truncate"
+                          >
+                            {report.fileUrl}
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </td>
                   <td className="p-4 text-slate-500 text-sm">
